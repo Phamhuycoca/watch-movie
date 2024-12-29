@@ -52,7 +52,7 @@
 /* From Uiverse.io by deepak16375 */
 .input-form {
     position: relative;
-    width: 550px;
+    width: 500px;
 }
 
 .input-form input {
@@ -63,13 +63,17 @@
     padding: 17px 25px;
     padding-right: 215px;
     border-radius: 4px;
-    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp cho tất cả các thuộc tính */
 }
 
 .input-form input:focus {
-    border: none; /* Khi focus sẽ mất border */
+    border-color: transparent; /* Biến viền thành trong suốt khi focus */
     outline: none; /* Loại bỏ outline khi focus */
-    box-shadow: 0 0 5px rgba(30, 30, 30, 0.3); /* Tạo hiệu ứng bóng mờ khi focus */
+    box-shadow: 0 0 5px rgba(30, 30, 30, 0.3); /* Thêm bóng mờ khi focus */
+}
+
+.input-form input:not(:focus) {
+    border-color: #faf9f7; /* Đảm bảo border trở lại trạng thái ban đầu khi không focus */
 }
 
 .input-form button {
