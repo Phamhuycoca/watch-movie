@@ -1,26 +1,53 @@
-import React from 'react';
+import React, { Suspense } from 'react'; // Thêm import Suspense
 import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import App from './layouts/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Admin from './layouts/Admin';
-import { Login, Register } from './pages/Auth';
+import routers from './routers/routers';
+import { Loading } from './components/Loading';
+import { Layout } from 'antd';
+import GlobalStyles from './components/GlobalStyles';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'remixicon/fonts/remixicon.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-            </Routes>
-        </BrowserRouter>
+        <GlobalStyles>
+            <BrowserRouter>
+                <Layout>
+                    <Suspense fallback={<Loading />}>
+                        <Routes>
+                            {routers.map((router, index) => {
+                                const Page = router.component;
+                                return (
+                                    <Route
+                                        key={index}
+                                        path={router.path}
+                                        element={<Page />}
+                                    >
+                                        {router.children &&
+                                            router.children.map(
+                                                (child, childIndex) => {
+                                                    const ChildPage =
+                                                        child.component;
+                                                    return (
+                                                        <Route
+                                                            key={childIndex}
+                                                            path={child.path}
+                                                            element={
+                                                                <ChildPage />
+                                                            }
+                                                        />
+                                                    );
+                                                },
+                                            )}
+                                    </Route>
+                                );
+                            })}
+                        </Routes>
+                    </Suspense>
+                </Layout>
+            </BrowserRouter>
+        </GlobalStyles>
     </React.StrictMode>,
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

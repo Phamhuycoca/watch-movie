@@ -1,0 +1,127 @@
+.link {
+    font-weight: 600;
+    color: #c3c3c3;
+    text-decoration: none;
+    &:hover {
+        color: var(--link-active);
+    }
+}
+.divider {
+    margin-top: 40px;
+}
+.search {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.search__input {
+    display: flex;
+    align-items: center;
+    background-color: #12151e;
+    border: none;
+    color: #12151e;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 300px;
+    transition: all ease-in-out 0.5s;
+    margin-right: -2rem;
+}
+
+.search__input:hover,
+.search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+    caret-color: #e0d505;
+    animation: blink 1s step-start infinite;
+}
+
+.search__input:focus {
+    outline: none;
+    background-color: #12151e;
+}
+
+.search__input::-webkit-input-placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.search__input:focus + .search__button {
+    background-color: transparent;
+}
+
+.search__button {
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: #12151e;
+}
+
+.search__button:hover {
+    cursor: pointer;
+}
+
+.search__icon {
+    font-size: 10px;
+    height: 1.3em;
+    width: 1.3em;
+    fill: var(--link-active);
+}
+// IconCircle
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.button-circle {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #2d2e32;
+    transition: all 0.45s;
+    box-shadow: inset 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgb(18, 21, 30);
+}
+.btn-svg {
+    color: #bcbcbc;
+    transition: filter 0.3s ease;
+}
+
+.button-circle:hover .btn-svg {
+    color: var(--link-active);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright-wrap {
+    background: #171b22;
+    padding: 25px 0;
+}
+.copyright-text > p {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #bcbcbc;
+    line-height: 24px;
+    margin-left: 48px;
+}
+.copyright-text-link {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #e0d505;
+    line-height: 24px;
+    text-decoration: none;
+}
+.copyright-text-img {
+    margin-left: 44px;
+}

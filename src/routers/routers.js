@@ -1,15 +1,19 @@
+import React from 'react';
+
 const routers = [
     {
         path: '/',
-        component: () => import('~/layouts/App'),
+        component: React.lazy(() => import('~/layouts/App')),
+        children: [
+            {
+                path: '/login',
+                component: React.lazy(() => import('~/pages/Auth/Login')),
+            },
+        ],
     },
     {
         path: '/admin',
-        component: () => import('~/layouts/Admin'),
-    },
-    {
-        path: '/login',
-        component: () => import('~/pages/Auth/Login'),
+        component: React.lazy(() => import('~/layouts/Admin')),
     },
 ];
 
