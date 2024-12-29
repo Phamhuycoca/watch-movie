@@ -4,6 +4,7 @@ import { Header } from '~/components/Header';
 import classNames from 'classnames/bind';
 import { Layout } from 'antd';
 import styles from './../styles/App.module.scss';
+import ScrollToTopButton from '~/components/ScrollToTopButton/ScrollToTopButton';
 const cx = classNames.bind(styles);
 const { Content } = Layout;
 
@@ -19,6 +20,7 @@ function App() {
                     }}
                 >
                     <Outlet />
+                    <ScrollToTopButton />
                 </Content>
             </div>
             <Footer />

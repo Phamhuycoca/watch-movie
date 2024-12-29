@@ -1,0 +1,16 @@
+.button-scroll {
+    background-color: var(--link-active);
+    border-color: transparent;
+    height: 50px !important;
+    width: 50px !important;
+    &:hover {
+        background-color: var(--link-noactive) !important;
+        border-color: transparent !important;
+    }
+}
+.button-scroll-icon {
+    color: var(--link-noactive);
+}
+.button-scroll:hover .button-scroll-icon {
+    color: var(--link-active) !important;
+}
