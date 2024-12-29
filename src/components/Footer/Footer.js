@@ -2,6 +2,7 @@ import { Col, Divider, Image, Layout, Row } from 'antd';
 import logo from './../../assets/logo.png';
 import footerbg from './../../assets/footer_bg.jpg';
 import card_img from './../../assets/card_img.png';
+import newsletter_bg from './../../assets/newsletter_bg.jpg';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
@@ -37,6 +38,29 @@ function FooterPage() {
     ];
     return (
         <>
+            <div
+                style={{
+                    width: '100vw',
+                    height: '154px',
+                    backgroundImage: `url(${newsletter_bg})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                }}
+            >
+                <div className={cx('newsletter')}>
+                    <div className={cx('newsletter-content')}>
+                        <h4>Trial Start First 30 Days.</h4>
+                        <p>
+                            Enter your email to create or restart your
+                            membership.
+                        </p>
+                    </div>
+                    <div>
+                        <SearchInput />
+                    </div>
+                </div>
+            </div>
             <Footer
                 style={{
                     backgroundColor: '#333',
@@ -133,6 +157,14 @@ function FooterPage() {
         </>
     );
 }
+const SearchInput = () => {
+    return (
+        <div className={cx('input-form')}>
+            <input placeholder="Enter your email" name="email" type="email" />
+            <button className={cx('button-search')}>GET STARTED</button>
+        </div>
+    );
+};
 
 const IntputSearch = () => {
     return (

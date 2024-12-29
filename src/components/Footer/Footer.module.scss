@@ -1,3 +1,42 @@
+/*
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: normal;
+*/
+.newsletter {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    max-width: 1330px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.newsletter-content > h4 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: normal;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #171d22;
+    margin-bottom: 0;
+}
+.newsletter-content > p {
+    font-size: 14px;
+    line-height: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #171d22;
+}
 .link {
     font-weight: 600;
     color: #c3c3c3;
@@ -9,6 +48,72 @@
 .divider {
     margin-top: 40px;
 }
+
+/* From Uiverse.io by deepak16375 */
+.input-form {
+    position: relative;
+    width: 550px;
+}
+
+.input-form input {
+    width: 100%;
+    border: 2px solid #faf9f7;
+    background: #fff;
+    box-shadow: 0px 3px 4px 0px rgba(30, 30, 30, 0.17);
+    padding: 17px 25px;
+    padding-right: 215px;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+.input-form input:focus {
+    border: none; /* Khi focus sẽ mất border */
+    outline: none; /* Loại bỏ outline khi focus */
+    box-shadow: 0 0 5px rgba(30, 30, 30, 0.3); /* Tạo hiệu ứng bóng mờ khi focus */
+}
+
+.input-form button {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 4px;
+    background: #171d22;
+    border-color: #171d22;
+    color: #e4d804;
+    font-size: 14px;
+    padding: 15px 34px;
+}
+
+.button-search {
+    user-select: none;
+    -moz-user-select: none;
+    background: #12151e none repeat scroll 0 0;
+    border: 2px solid #e4d804;
+    border-radius: 50px;
+    color: #e3dfdf;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding: 16px 34px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.button-search:hover {
+    background-color: #e4d804;
+    color: #171d22;
+}
+
 .search {
     margin-right: 10px;
     display: flex;
@@ -22,7 +127,7 @@
     align-items: center;
     background-color: #12151e;
     border: none;
-    color: #12151e;
+    color: #fff;
     padding: 0.7rem 1rem;
     border-radius: 30px;
     width: 300px;
