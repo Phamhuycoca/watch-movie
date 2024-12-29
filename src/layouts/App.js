@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
+import { Layout } from 'antd';
 import { Footer } from '~/components/Footer';
 import { Header } from '~/components/Header';
 import classNames from 'classnames/bind';
-import { Layout } from 'antd';
-import styles from './../styles/App.module.scss';
 import ScrollToTopButton from '~/components/ScrollToTopButton/ScrollToTopButton';
+import styles from './../styles/App.module.scss';
+
 const cx = classNames.bind(styles);
 const { Content } = Layout;
 
