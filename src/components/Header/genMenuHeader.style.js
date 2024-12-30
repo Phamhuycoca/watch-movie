@@ -1,7 +1,6 @@
 export const genMenuHeader = (prefixCls, token) => ({
     [`.${prefixCls}`]: {
         '.ant-image': {
-            top: '-12px',
             position: 'relative',
             display: 'inline-block',
         },
@@ -44,6 +43,9 @@ export const genMenuHeader = (prefixCls, token) => ({
         },
         '.ant-menu-submenu-popup.ant-menu-submenu': {
             backgroundColor: '#171d22',
+        },
+        '.anticon .anticon-search:hover': {
+            backgroundColor: '#e0d505',
         },
     },
 });

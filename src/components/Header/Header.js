@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Image, Layout, Menu, theme } from 'antd';
+import { Col, Image, Layout, Menu, Row, theme } from 'antd';
 import breadcrumb_bg from './../../assets/breadcrumb_bg.jpg';
 import logo from './../../assets/logo.png';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { genMenuHeader } from './genMenuHeader.style';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
+import { SearchOutlined } from '@ant-design/icons';
+import styles from '~/styles/Header.module.scss';
 const { Header } = Layout;
-
+const cx = classNames.bind(styles);
 const items = [
     {
         label: 'Home',
@@ -59,10 +61,8 @@ function HeaderPage() {
                         left: 0,
                         zIndex: 100,
                         height: '90px',
-                        width: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        width: '100vw',
+                        maxWidth: '100vw',
                         padding: '10px 20px',
                         backgroundColor: isScrolled ? '#171d22' : 'transparent',
                         color: '#fff',
@@ -72,38 +72,29 @@ function HeaderPage() {
                         transition: 'all 0.3s ease-in-out',
                     }}
                 >
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignContent: 'center',
-                            alignItems: 'center',
-                            fontSize: '1.5rem',
-                            fontWeight: 'bold',
-                            color: '#fff',
-                            width: '100%',
-                            maxWidth: '1500px',
-                        }}
-                    >
-                        <Image src={logo} preview={false} height={40} />
-                        <Menu
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['1']}
-                            className={prefixCls}
-                            mode="horizontal"
-                            style={{
-                                display: 'flex',
-                                justifyContent: 'end',
-                                maxWidth: '830px',
-                                width: '100%',
-                                backgroundColor: 'transparent',
-                                borderBottom: 'none',
-                            }}
-                            items={items}
-                        />
-                    </div>
+                    <Row justify={'space-between'}>
+                        <Col span={6}>
+                            <Image src={logo} preview={false} height={40} />
+                        </Col>
+                        <Col span={12}>
+                            <Menu
+                                defaultSelectedKeys={['1']}
+                                defaultOpenKeys={['1']}
+                                className={cx('menu-custom')}
+                                mode="horizontal"
+                                items={items}
+                            />
+                        </Col>
+                        <Col span={6}>
+                            <SearchOutlined />
+                        </Col>
+                    </Row>
                 </Header>
                 <div
                     style={{
+                        display: 'flex',
+                        alignContent: 'start',
+                        alignItems: 'start',
                         height: '700px',
                         backgroundImage: `url(${breadcrumb_bg})`,
                         backgroundSize: 'cover',
@@ -112,20 +103,6 @@ function HeaderPage() {
                         width: '100%',
                     }}
                 />
-                <div style={{ padding: '20px', backgroundColor: '#f5f5f5' }}>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus lacinia odio vitae vestibulum vestibulum. Cras
-                        venenatis euismod malesuada.
-                    </p>
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus
-                        et malesuada fames ac turpis egestas. Vestibulum tortor
-                        quam, feugiat vitae, ultricies eget, tempor sit amet,
-                        ante.
-                    </p>
-                    <p>...</p>
-                </div>
             </div>
         </>,
     );
