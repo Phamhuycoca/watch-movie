@@ -5,7 +5,6 @@ import { Header } from '~/components/Header';
 import classNames from 'classnames/bind';
 import ScrollToTopButton from '~/components/ScrollToTopButton/ScrollToTopButton';
 import styles from './../styles/App.module.scss';
-
 const cx = classNames.bind(styles);
 const { Content } = Layout;
 

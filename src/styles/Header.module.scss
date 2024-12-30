@@ -1,3 +1,13 @@
-.custom-menu-title-content {
-    color: white !important;
+.custom-menu {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.custom-menu .ant-menu-item {
+    color: #1d39c4;
+}
+
+.custom-menu .ant-menu-item:hover {
+    background-color: #e6f7ff;
+    color: #096dd9;
 }
