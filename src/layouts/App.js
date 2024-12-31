@@ -13,12 +13,7 @@ function App() {
         <div className={cx('App')}>
             <Header />
             <div className={cx('main')}>
-                <Content
-                    style={{
-                        margin: '24px 16px 0',
-                        overflow: 'initial',
-                    }}
-                >
+                <Content>
                     <Outlet />
                     <ScrollToTopButton />
                 </Content>

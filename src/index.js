@@ -21,7 +21,12 @@ root.render(
             <StyleProvider hashPriority="low">
                 <GlobalStyles>
                     <BrowserRouter>
-                        <Layout>
+                        <Layout
+                            style={{
+                                width: '100vw',
+                                maxWidth: '100vw',
+                            }}
+                        >
                             <Suspense fallback={<Loading />}>
                                 <Routes>
                                     {routers.map((router, index) => {

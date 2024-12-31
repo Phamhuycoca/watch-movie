@@ -7,6 +7,7 @@ import { genMenuHeader } from './genMenuHeader.style';
 import classNames from 'classnames/bind';
 import { SearchOutlined } from '@ant-design/icons';
 import styles from '~/styles/Header.module.scss';
+import { ModalSearch } from './Modal-Search';
 
 const { Header } = Layout;
 const cx = classNames.bind(styles);
@@ -28,14 +29,13 @@ const items = [
 
 function HeaderPage() {
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const [open, setOpen] = useState(false);
     // Sử dụng token từ theme
     const prefixCls = 'custom-menu';
     const infoStyle = { ...theme.useToken(), ...{ path: [prefixCls] } };
     const wrapSSR = useStyleRegister(infoStyle, () => [
         genMenuHeader(prefixCls, infoStyle.token),
     ]);
-    console.log(genMenuHeader(prefixCls, infoStyle.token));
 
     const handleScroll = () => {
         if (window.scrollY > 100) {
@@ -54,7 +54,7 @@ function HeaderPage() {
 
     return wrapSSR(
         <>
-            <div className={classNames(prefixCls, infoStyle.hashId, cx('sub-menu-custom'))}>
+            <div className={classNames(prefixCls, infoStyle.hashId)}>
                 <Header
                     style={{
                         position: 'fixed',
@@ -75,21 +75,40 @@ function HeaderPage() {
                 >
                     <Row justify={'space-between'}>
                         <Col span={6}>
-                            <Image src={logo} preview={false} height={40} />
+                            <Row justify={'center'}>
+                                <Image src={logo} preview={false} height={40} />
+                            </Row>
                         </Col>
                         <Col span={12}>
-                          <div className={cx('wrapper-menu-custom')}>
-                          <Menu
-                                defaultSelectedKeys={['1']}
-                                defaultOpenKeys={['1']}
-                                className={cx('menu-custom')}
-                                mode="horizontal"
-                                items={items}
-                            />
-                          </div>
+                            <div className={cx('wrapper-menu-custom')}>
+                                <Menu
+                                    // defaultSelectedKeys={['1']}
+                                    // defaultOpenKeys={['1']}
+                                    className={cx('menu-custom')}
+                                    mode="horizontal"
+                                    items={items}
+                                />
+                            </div>
                         </Col>
                         <Col span={6}>
-                            <SearchOutlined />
+                            <div
+                                style={{
+                                    cursor: 'pointer',
+                                    height: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <SearchOutlined
+                                    onClick={() => {
+                                        setOpen(true);
+                                    }}
+                                    style={{
+                                        fontSize: '20px',
+                                        fontWeight: 'bolder',
+                                    }}
+                                />
+                            </div>
                         </Col>
                     </Row>
                 </Header>
@@ -104,9 +123,16 @@ function HeaderPage() {
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         width: '100vw',
+                        maxWidth: '100vw',
                     }}
                 />
             </div>
+            <ModalSearch
+                IsOpen={open}
+                OnClose={() => {
+                    setOpen(false);
+                }}
+            />
         </>,
     );
 }
