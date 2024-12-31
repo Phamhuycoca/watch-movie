@@ -60,5 +60,23 @@ export const genMenuHeader = (prefixCls, token) => ({
         'ul .ant-menu .ant-menu-sub .ant-menu-vertical': {
             backgroundColor: '#e0d505',
         },
+        '.ant-btn-lg': {
+            width: '130px',
+        },
+        '.ant-btn-color-default': {
+            color: '#fff',
+            fontWeight: 'bolder',
+            fontSize: '14px',
+        },
+        '.ant-btn-variant-outlined': {
+            backgroundColor: '#171d22',
+            borderColor: '#e0d505',
+        },
+        '.ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover':
+            {
+                color: '#333',
+                backgroundColor: '#e0d505',
+                borderColor: '#e0d505',
+            },
     },
 });

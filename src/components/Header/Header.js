@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Image, Layout, Menu, Row, theme } from 'antd';
+import { Button, Col, Dropdown, Image, Layout, Menu, Row, theme } from 'antd';
 import breadcrumb_bg from './../../assets/breadcrumb_bg.jpg';
 import logo from './../../assets/logo.png';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { genMenuHeader } from './genMenuHeader.style';
 import classNames from 'classnames/bind';
-import { SearchOutlined } from '@ant-design/icons';
+import {
+    DownOutlined,
+    GlobalOutlined,
+    SearchOutlined,
+} from '@ant-design/icons';
 import styles from '~/styles/Header.module.scss';
 import { ModalSearch } from './Modal-Search';
 
@@ -51,6 +55,24 @@ function HeaderPage() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+    const dropdowns = [
+        {
+            key: 'EN',
+            label: 'EN',
+        },
+        {
+            key: 'AU',
+            label: 'AU',
+        },
+        {
+            key: 'AR',
+            label: 'AR',
+        },
+        {
+            key: 'TU',
+            label: 'TU',
+        },
+    ];
 
     return wrapSSR(
         <>
@@ -93,21 +115,60 @@ function HeaderPage() {
                         <Col span={6}>
                             <div
                                 style={{
-                                    cursor: 'pointer',
-                                    height: '100%',
                                     display: 'flex',
                                     alignItems: 'center',
                                 }}
                             >
-                                <SearchOutlined
-                                    onClick={() => {
-                                        setOpen(true);
-                                    }}
+                                <div
                                     style={{
-                                        fontSize: '20px',
-                                        fontWeight: 'bolder',
+                                        width: '50px',
+                                        cursor: 'pointer',
+                                        height: '100%',
+                                        display: 'flex',
+                                        alignItems: 'center',
                                     }}
-                                />
+                                >
+                                    <SearchOutlined
+                                        onClick={() => {
+                                            setOpen(true);
+                                        }}
+                                        style={{
+                                            fontSize: '20px',
+                                            fontWeight: 'bolder',
+                                        }}
+                                    />
+                                </div>
+                                <div style={{ width: '100px', height: '100%' }}>
+                                    <GlobalOutlined
+                                        style={{
+                                            fontSize: '20px',
+                                            fontWeight: 'bolder',
+                                            color: '#e0d505',
+                                        }}
+                                    />
+                                    <Dropdown
+                                        menu={{
+                                            dropdowns,
+                                        }}
+                                        trigger={['click']}
+                                    >
+                                        <a
+                                            style={{
+                                                marginLeft: '5px',
+                                                textDecoration: 'none',
+                                                color: 'white',
+                                            }}
+                                        >
+                                            {dropdowns[0].label}
+                                            <DownOutlined />
+                                        </a>
+                                    </Dropdown>
+                                </div>
+                                <div>
+                                    <Button shape="round" size={'large'}>
+                                        SIGN IN
+                                    </Button>
+                                </div>
                             </div>
                         </Col>
                     </Row>
