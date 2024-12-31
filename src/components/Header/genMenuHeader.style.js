@@ -38,9 +38,25 @@ export const genMenuHeader = (prefixCls, token) => ({
         '.ant-menu-light.ant-menu-horizontal >.ant-menu-submenu::after': {
             content: 'none',
         },
+        '.ant-menu-light.ant-menu-submenu-popup>.ant-menu': {
+            backgroundColor: '#171d22',
+        },
+        '.ant-menu-light.ant-menu-submenu>.ant-menu': {
+            backgroundColor: '#171d22',
+        },
+        '.ant-menu-light>.ant-menu': {
+            backgroundColor: '#171d22',
+        },
+        '.ant-menu-submenu-popup.ant-menu-submenu': {
+            backgroundColor: '#171d22',
+        },
         '.anticon .anticon-search:hover': {
             backgroundColor: '#e0d505',
         },
+        '.ant-menu-submenu-popup .ant-menu-vertical.ant-menu-sub:not([class*="-active"])':
+            {
+                backgroundColor: 'black !important',
+            },
         'ul .ant-menu .ant-menu-sub .ant-menu-vertical': {
             backgroundColor: '#e0d505',
         },

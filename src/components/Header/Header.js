@@ -7,6 +7,7 @@ import { genMenuHeader } from './genMenuHeader.style';
 import classNames from 'classnames/bind';
 import { SearchOutlined } from '@ant-design/icons';
 import styles from '~/styles/Header.module.scss';
+
 const { Header } = Layout;
 const cx = classNames.bind(styles);
 const items = [
@@ -53,7 +54,7 @@ function HeaderPage() {
 
     return wrapSSR(
         <>
-            <div className={classNames(prefixCls, infoStyle.hashId)}>
+            <div className={classNames(prefixCls, infoStyle.hashId, cx('sub-menu-custom'))}>
                 <Header
                     style={{
                         position: 'fixed',
@@ -77,13 +78,15 @@ function HeaderPage() {
                             <Image src={logo} preview={false} height={40} />
                         </Col>
                         <Col span={12}>
-                            <Menu
+                          <div className={cx('wrapper-menu-custom')}>
+                          <Menu
                                 defaultSelectedKeys={['1']}
                                 defaultOpenKeys={['1']}
                                 className={cx('menu-custom')}
                                 mode="horizontal"
                                 items={items}
                             />
+                          </div>
                         </Col>
                         <Col span={6}>
                             <SearchOutlined />
