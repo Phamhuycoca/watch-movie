@@ -17,3 +17,9 @@
     background-color: transparent;
     border-bottom: none;
 }
+.sub-menu-custom {
+    .ant-menu-submenu-popup
+        .ant-menu-vertical.ant-menu-sub:not([class*='-active']) {
+        background-color: black !important;
+    }
+}
