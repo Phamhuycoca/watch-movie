@@ -70,6 +70,7 @@ function FooterPage() {
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     marginBottom: '0',
+                    width: '100vw',
                 }}
             >
                 <Row

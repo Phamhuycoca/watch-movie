@@ -1,11 +1,3 @@
-/*
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    margin-top: 0px;
-    font-style: normal;
-    font-weight: 700;
-    text-transform: normal;
-*/
 .newsletter {
     display: flex;
     justify-content: space-between;
@@ -216,6 +208,7 @@
 .copyright-wrap {
     background: #171b22;
     padding: 25px 0;
+    width: 100vw;
 }
 .copyright-text > p {
     margin-bottom: 0;

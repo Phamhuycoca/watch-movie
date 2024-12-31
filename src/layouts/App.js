@@ -10,7 +10,7 @@ const { Content } = Layout;
 
 function App() {
     return (
-        <div className="App">
+        <div className={cx('App')}>
             <Header />
             <div className={cx('main')}>
                 <Content

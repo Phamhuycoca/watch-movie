@@ -100,7 +100,7 @@ function HeaderPage() {
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
-                        width: '100%',
+                        width: '100vw',
                     }}
                 />
             </div>

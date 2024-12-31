@@ -11,4 +11,22 @@
     width: 100%;
     background-color: transparent;
     border-bottom: none;
+    .ant-menu-light.ant-menu-submenu-popup > .ant-menu,
+    .ant-menu-light > .ant-menu.ant-menu-submenu-popup > .ant-menu {
+        background-color: #333 !important;
+    }
+    .ant-menu-light.ant-menu-submenu > .ant-menu,
+    .ant-menu-light > .ant-menu.ant-menu-submenu > .ant-menu {
+        background-color: #333 !important;
+    }
+    .ant-menu-light,
+    .ant-menu-light > .ant-menu {
+        color: rgba(0, 0, 0, 0.88);
+        background: #333 !important;
+    }
+}
+.menu-custom
+    > .ant-menu-submenu-popup
+    .ant-menu-vertical.ant-menu-sub:not([class*='-active']) {
+    background-color: #333 !important;
 }
