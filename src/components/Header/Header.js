@@ -77,13 +77,15 @@ function HeaderPage() {
                             <Image src={logo} preview={false} height={40} />
                         </Col>
                         <Col span={12}>
-                            <Menu
+                          <div className={cx('wrapper-menu-custom')}>
+                          <Menu
                                 defaultSelectedKeys={['1']}
                                 defaultOpenKeys={['1']}
                                 className={cx('menu-custom')}
                                 mode="horizontal"
                                 items={items}
                             />
+                          </div>
                         </Col>
                         <Col span={6}>
                             <SearchOutlined />
