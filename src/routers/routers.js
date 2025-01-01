@@ -7,7 +7,13 @@ const routers = [
         children: [
             {
                 path: '/login',
-                component: React.lazy(() => import('~/pages/Auth/Login')),
+                component: React.lazy(() => import('~/pages/Auth/Login/Login')),
+            },
+            {
+                path: '/register',
+                component: React.lazy(() =>
+                    import('~/pages/Auth/Register/Register'),
+                ),
             },
         ],
     },

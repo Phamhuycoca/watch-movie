@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { Button, Checkbox, Col, Form, Image, Input, Row, theme } from 'antd';
-import pricing_bg from './../../assets/pricing_bg.jpg';
+import pricing_bg from './../../../assets/pricing_bg.jpg';
 import classNames from 'classnames';
-import { genLogin } from './genLogin.style';
 import { Link } from 'react-router-dom';
-import logo from './../../assets/logo.png';
+import logo from './../../../assets/logo.png';
+import { genRegister } from './genRegister.style';
 
 const prefixCls = 'custom-login';
 
@@ -16,12 +16,12 @@ const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
 };
 
-const Login = () => {
+const Register = () => {
     const { token } = theme.useToken(); // Di chuyển useToken vào trong component
     const infoStyle = { token, path: [prefixCls] };
 
     const wrapSSR = useStyleRegister(infoStyle, () =>
-        genLogin(prefixCls, infoStyle.token),
+        genRegister(prefixCls, infoStyle.token),
     );
 
     return wrapSSR(
@@ -120,6 +120,33 @@ const Login = () => {
                                 />
                             </Form.Item>
                             <Form.Item
+                                label={
+                                    <span
+                                        style={{
+                                            color: '#e0d505',
+                                            fontSize: '18px',
+                                        }}
+                                    >
+                                        Nhập lại mật khẩu
+                                    </span>
+                                }
+                                name="password"
+                            >
+                                <Input.Password
+                                    variant="borderless"
+                                    size="large"
+                                    placeholder="Nhập thông tin"
+                                    style={{
+                                        borderBottom: '1px solid #e0d505',
+                                        borderRadius: '0px',
+                                        caretColor: '#e0d505',
+                                        color: '#fff',
+                                        fontSize: '18px',
+                                        lineHeight: '40px',
+                                    }}
+                                />
+                            </Form.Item>
+                            <Form.Item
                                 name="remember"
                                 valuePropName="checked"
                                 label={null}
@@ -128,15 +155,15 @@ const Login = () => {
                                     <Checkbox style={{ color: '#fff' }}>
                                         Ghi nhớ thông tin
                                     </Checkbox>
-                                    <Link style={{ color: '#fff' }} to="/">
-                                        Bạn chưa có tài khoản?
+                                    <Link style={{ color: '#fff' }} to="/login">
+                                        Bạn đã có tài khoản?
                                     </Link>
                                 </Row>
                             </Form.Item>
 
                             <Form.Item label={null}>
                                 <Row justify={'center'}>
-                                    <Button htmlType="submit">Đăng nhập</Button>
+                                    <Button htmlType="submit">Đăng ký</Button>
                                 </Row>
                             </Form.Item>
                         </Form>
@@ -147,4 +174,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
