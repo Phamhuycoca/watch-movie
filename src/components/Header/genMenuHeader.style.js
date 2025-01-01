@@ -64,6 +64,7 @@ export const genMenuHeader = (prefixCls, token) => ({
             width: '130px',
         },
         '.ant-btn-color-default': {
+            height: '50px',
             color: '#fff',
             fontWeight: 'bolder',
             fontSize: '14px',

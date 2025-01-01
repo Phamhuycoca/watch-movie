@@ -13,7 +13,12 @@ function App() {
         <div className={cx('App')}>
             <Header />
             <div className={cx('main')}>
-                <Content>
+                <Content
+                    style={{
+                        height: '100%',
+                        minHeight: '912px',
+                    }}
+                >
                     <Outlet />
                     <ScrollToTopButton />
                 </Content>

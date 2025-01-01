@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Col, Dropdown, Image, Layout, Menu, Row, theme } from 'antd';
+import { Button, Col, Image, Layout, Menu, Row, theme } from 'antd';
 import breadcrumb_bg from './../../assets/breadcrumb_bg.jpg';
 import logo from './../../assets/logo.png';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { genMenuHeader } from './genMenuHeader.style';
 import classNames from 'classnames/bind';
 import {
-    DownOutlined,
+    // DownOutlined,
     GlobalOutlined,
     SearchOutlined,
 } from '@ant-design/icons';
 import styles from '~/styles/Header.module.scss';
 import { ModalSearch } from './Modal-Search';
+import { NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const { Header } = Layout;
 const cx = classNames.bind(styles);
@@ -138,7 +140,14 @@ function HeaderPage() {
                                         }}
                                     />
                                 </div>
-                                <div style={{ width: '100px', height: '100%' }}>
+                                <div
+                                    style={{
+                                        width: '80px',
+                                        height: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'space-evenly',
+                                    }}
+                                >
                                     <GlobalOutlined
                                         style={{
                                             fontSize: '20px',
@@ -146,13 +155,13 @@ function HeaderPage() {
                                             color: '#e0d505',
                                         }}
                                     />
-                                    <Dropdown
+                                    {/* <Dropdown
                                         menu={{
                                             dropdowns,
                                         }}
                                         trigger={['click']}
                                     >
-                                        <a
+                                        <span
                                             style={{
                                                 marginLeft: '5px',
                                                 textDecoration: 'none',
@@ -161,12 +170,41 @@ function HeaderPage() {
                                         >
                                             {dropdowns[0].label}
                                             <DownOutlined />
-                                        </a>
-                                    </Dropdown>
+                                        </span>
+                                    </Dropdown> */}
+                                    <NavDropdown
+                                        title={dropdowns[0].label}
+                                        menuVariant="dark"
+                                    >
+                                        {dropdowns.map((item, index) => {
+                                            return (
+                                                <NavDropdown.Item
+                                                    key={index}
+                                                    style={{
+                                                        transform:
+                                                            'translate(0px, 45px) !important',
+                                                    }}
+                                                >
+                                                    {item.label}
+                                                </NavDropdown.Item>
+                                            );
+                                        })}
+                                    </NavDropdown>
                                 </div>
-                                <div>
+                                <div
+                                    style={{
+                                        marginLeft: '60px',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
                                     <Button shape="round" size={'large'}>
-                                        SIGN IN
+                                        <Link
+                                            style={{ textDecoration: 'none' }}
+                                            to="/login"
+                                        >
+                                            SIGN IN
+                                        </Link>
                                     </Button>
                                 </div>
                             </div>
