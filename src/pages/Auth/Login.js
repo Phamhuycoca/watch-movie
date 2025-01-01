@@ -23,14 +23,15 @@ function Login() {
     };
     return (
         <>
-        <Menu
-                                defaultSelectedKeys={['1']}
-                                defaultOpenKeys={['1']}
-                                mode="horizontal"
-                                items={items}
-                            />
+            <Menu
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['1']}
+                mode="horizontal"
+                items={items}
+            />
             <Button onClick={showLoader}>Show</Button>
             <Loading state={loading} />
+            <p>test</p>
         </>
     );
 }

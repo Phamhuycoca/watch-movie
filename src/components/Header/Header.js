@@ -96,7 +96,7 @@ function HeaderPage() {
                     }}
                 >
                     <Row justify={'space-between'}>
-                        <Col span={6}>
+                        <Col span={5}>
                             <Row justify={'center'}>
                                 <Image src={logo} preview={false} height={40} />
                             </Row>
