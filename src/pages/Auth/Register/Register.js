@@ -1,6 +1,16 @@
 import React from 'react';
 import { useStyleRegister } from '@ant-design/cssinjs';
-import { Button, Checkbox, Col, Form, Image, Input, Row, theme } from 'antd';
+import {
+    Button,
+    Checkbox,
+    Col,
+    Divider,
+    Form,
+    Image,
+    Input,
+    Row,
+    theme,
+} from 'antd';
 import pricing_bg from './../../../assets/pricing_bg.jpg';
 import classNames from 'classnames';
 import logo from './../../../assets/logo.png';
@@ -155,18 +165,41 @@ const Register = () => {
                                     <Checkbox style={{ color: '#fff' }}>
                                         Remember me
                                     </Checkbox>
-                                    <Link
+                                    {/* <Link
                                         style={{ color: '#fff' }}
                                         to="/register"
                                     >
                                         Login now?
-                                    </Link>
+                                    </Link> */}
                                 </Row>
                             </Form.Item>
 
                             <Form.Item label={null}>
                                 <Row justify={'center'}>
-                                    <Button htmlType="submit">Register</Button>
+                                    <Button
+                                        htmlType="submit"
+                                        style={{ width: '100%' }}
+                                    >
+                                        Register
+                                    </Button>
+                                </Row>
+                            </Form.Item>
+                            <Form.Item>
+                                <Row justify={'center'}>
+                                    <Divider
+                                        style={{
+                                            borderColor: '#e0d505',
+                                            color: '#fff',
+                                        }}
+                                    >
+                                        OR
+                                    </Divider>
+                                </Row>
+                                <Row justify={'center'}>
+                                    <span style={{ color: '#fff' }}>
+                                        Have an account?{' '}
+                                        <Link to="/register">Login now</Link>
+                                    </span>
                                 </Row>
                             </Form.Item>
                         </Form>
