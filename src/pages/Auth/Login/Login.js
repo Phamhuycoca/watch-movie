@@ -1,6 +1,16 @@
 import React from 'react';
 import { useStyleRegister } from '@ant-design/cssinjs';
-import { Button, Checkbox, Col, Form, Image, Input, Row, theme } from 'antd';
+import {
+    Button,
+    Checkbox,
+    Col,
+    Divider,
+    Form,
+    Image,
+    Input,
+    Row,
+    theme,
+} from 'antd';
 import pricing_bg from './../../../assets/pricing_bg.jpg';
 import classNames from 'classnames';
 import { genLogin } from './genLogin.style';
@@ -73,7 +83,7 @@ const Login = () => {
                                             fontSize: '18px',
                                         }}
                                     >
-                                        Tên đăng nhập
+                                        Username
                                     </span>
                                 }
                                 name="username"
@@ -81,7 +91,7 @@ const Login = () => {
                                 <Input
                                     variant="borderless"
                                     size="large"
-                                    placeholder="Nhập thông tin"
+                                    placeholder="Enter your username"
                                     style={{
                                         borderBottom: '1px solid #e0d505',
                                         borderRadius: '0px',
@@ -100,7 +110,7 @@ const Login = () => {
                                             fontSize: '18px',
                                         }}
                                     >
-                                        Mật khẩu
+                                        Password
                                     </span>
                                 }
                                 name="password"
@@ -108,7 +118,7 @@ const Login = () => {
                                 <Input.Password
                                     variant="borderless"
                                     size="large"
-                                    placeholder="Nhập thông tin"
+                                    placeholder="Enter your password"
                                     style={{
                                         borderBottom: '1px solid #e0d505',
                                         borderRadius: '0px',
@@ -126,20 +136,43 @@ const Login = () => {
                             >
                                 <Row justify={'space-between'}>
                                     <Checkbox style={{ color: '#fff' }}>
-                                        Ghi nhớ thông tin
+                                        Remember me
                                     </Checkbox>
                                     <Link
                                         style={{ color: '#fff' }}
                                         to="/register"
                                     >
-                                        Bạn chưa có tài khoản?
+                                        Forgot password?
                                     </Link>
                                 </Row>
                             </Form.Item>
 
                             <Form.Item label={null}>
                                 <Row justify={'center'}>
-                                    <Button htmlType="submit">Đăng nhập</Button>
+                                    <Button
+                                        style={{ width: '100%' }}
+                                        htmlType="submit"
+                                    >
+                                        Login
+                                    </Button>
+                                </Row>
+                            </Form.Item>
+                            <Form.Item>
+                                <Row justify={'center'}>
+                                    <Divider
+                                        style={{
+                                            borderColor: '#e0d505',
+                                            color: '#fff',
+                                        }}
+                                    >
+                                        OR
+                                    </Divider>
+                                </Row>
+                                <Row justify={'center'}>
+                                    <span style={{ color: '#fff' }}>
+                                        Don't have an account?{' '}
+                                        <Link to="/register">Signup now</Link>
+                                    </span>
                                 </Row>
                             </Form.Item>
                         </Form>

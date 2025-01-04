@@ -3,9 +3,9 @@ import { useStyleRegister } from '@ant-design/cssinjs';
 import { Button, Checkbox, Col, Form, Image, Input, Row, theme } from 'antd';
 import pricing_bg from './../../../assets/pricing_bg.jpg';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import logo from './../../../assets/logo.png';
 import { genRegister } from './genRegister.style';
+import { Link } from 'react-router-dom';
 
 const prefixCls = 'custom-login';
 
@@ -73,7 +73,7 @@ const Register = () => {
                                             fontSize: '18px',
                                         }}
                                     >
-                                        Tên đăng nhập
+                                        Username
                                     </span>
                                 }
                                 name="username"
@@ -81,7 +81,7 @@ const Register = () => {
                                 <Input
                                     variant="borderless"
                                     size="large"
-                                    placeholder="Nhập thông tin"
+                                    placeholder="Enter your username"
                                     style={{
                                         borderBottom: '1px solid #e0d505',
                                         borderRadius: '0px',
@@ -100,7 +100,7 @@ const Register = () => {
                                             fontSize: '18px',
                                         }}
                                     >
-                                        Mật khẩu
+                                        Password
                                     </span>
                                 }
                                 name="password"
@@ -108,7 +108,7 @@ const Register = () => {
                                 <Input.Password
                                     variant="borderless"
                                     size="large"
-                                    placeholder="Nhập thông tin"
+                                    placeholder="Enter your password"
                                     style={{
                                         borderBottom: '1px solid #e0d505',
                                         borderRadius: '0px',
@@ -127,7 +127,7 @@ const Register = () => {
                                             fontSize: '18px',
                                         }}
                                     >
-                                        Nhập lại mật khẩu
+                                        Confirm password
                                     </span>
                                 }
                                 name="password"
@@ -135,7 +135,7 @@ const Register = () => {
                                 <Input.Password
                                     variant="borderless"
                                     size="large"
-                                    placeholder="Nhập thông tin"
+                                    placeholder="Enter your confirm password"
                                     style={{
                                         borderBottom: '1px solid #e0d505',
                                         borderRadius: '0px',
@@ -153,17 +153,20 @@ const Register = () => {
                             >
                                 <Row justify={'space-between'}>
                                     <Checkbox style={{ color: '#fff' }}>
-                                        Ghi nhớ thông tin
+                                        Remember me
                                     </Checkbox>
-                                    <Link style={{ color: '#fff' }} to="/login">
-                                        Bạn đã có tài khoản?
+                                    <Link
+                                        style={{ color: '#fff' }}
+                                        to="/register"
+                                    >
+                                        Login now?
                                     </Link>
                                 </Row>
                             </Form.Item>
 
                             <Form.Item label={null}>
                                 <Row justify={'center'}>
-                                    <Button htmlType="submit">Đăng ký</Button>
+                                    <Button htmlType="submit">Register</Button>
                                 </Row>
                             </Form.Item>
                         </Form>

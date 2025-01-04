@@ -100,7 +100,13 @@ function HeaderPage() {
                     <Row justify={'space-between'}>
                         <Col span={5}>
                             <Row justify={'center'}>
-                                <Image src={logo} preview={false} height={40} />
+                                <Link to="/">
+                                    <Image
+                                        src={logo}
+                                        preview={false}
+                                        height={40}
+                                    />
+                                </Link>
                             </Row>
                         </Col>
                         <Col span={12}>
