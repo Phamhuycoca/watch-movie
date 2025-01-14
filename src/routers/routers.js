@@ -20,6 +20,18 @@ const routers = [
     {
         path: '/admin',
         component: React.lazy(() => import('~/layouts/Admin')),
+        children: [
+            {
+                path: 'category',
+                component: React.lazy(() =>
+                    import('~/modules/AdminCategory/CategoryAdmin'),
+                ),
+            },
+            {
+                path: 'login',
+                component: React.lazy(() => import('~/pages/Auth/Login/Login')),
+            },
+        ],
     },
 ];
 
