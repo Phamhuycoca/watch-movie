@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Breadcrumb, Layout, theme } from 'antd';
+import { Layout, theme } from 'antd';
 import { HeaderAdmin } from '~/components/Header/Header-Admin';
 import SidebarAdmin from '~/components/Sidebar/SidebarAdmin';
 import { Outlet } from 'react-router-dom';
@@ -20,28 +20,12 @@ const Admin = () => {
                 <div className={cx('main')}>
                     <Layout
                         style={{
-                            padding: '0 24px 24px',
+                            padding: '24px 24px',
                         }}
                     >
-                        <Breadcrumb
-                            items={[
-                                {
-                                    title: 'Home',
-                                },
-                                {
-                                    title: 'List',
-                                },
-                                {
-                                    title: 'App',
-                                },
-                            ]}
-                            style={{
-                                margin: '16px 0',
-                            }}
-                        />
                         <Content
                             style={{
-                                padding: 24,
+                                padding: 10,
                                 margin: 0,
                                 minHeight: 280,
                                 background: colorBgContainer,

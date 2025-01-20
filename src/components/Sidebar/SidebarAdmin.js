@@ -133,6 +133,7 @@ function SidebarAdmin() {
                     height: '100%',
                     borderRight: 0,
                 }}
+                theme="dark"
                 items={items}
             />
         </Sider>

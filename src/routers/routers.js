@@ -24,7 +24,7 @@ const routers = [
             {
                 path: 'category',
                 component: React.lazy(() =>
-                    import('~/modules/AdminCategory/CategoryAdmin'),
+                    import('~/modules/admin.category/List'),
                 ),
             },
             {
